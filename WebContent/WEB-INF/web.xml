@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+	id="WebApp_ID" version="2.5">
+
+	<display-name>candyandfeelingstory</display-name>
+	
+	<!-- 添加 -->
+	<servlet>
+    	<servlet-name>addmsgServlet</servlet-name>
+    	<servlet-class>com.Servlet.addmsgServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>addmsgServlet</servlet-name>
+    	<url-pattern>/addmsg.do</url-pattern>
+  	</servlet-mapping>
+  	
+  	<!-- 删除 -->
+  	<servlet>
+    	<servlet-name>delmsgServlet</servlet-name>
+    	<servlet-class>com.Servlet.delmsgServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>delmsgServlet</servlet-name>
+    	<url-pattern>/delmsg.do</url-pattern>
+  	</servlet-mapping>
+  	
+  	<!-- 编辑 -->
+  	<servlet>
+    	<servlet-name>edmsgServlet</servlet-name>
+    	<servlet-class>com.Servlet.edmsgServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>edmsgServlet</servlet-name>
+    	<url-pattern>/edmsg.do</url-pattern>
+  	</servlet-mapping>
+  	
+  	<welcome-file-list>
+    	<welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+</web-app>
