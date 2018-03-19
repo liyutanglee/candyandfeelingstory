@@ -39,7 +39,7 @@ public class addmsgServlet extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		request.setCharacterEncoding("utf-8");
 		String baseurl=request.getSession().getServletContext().getRealPath("");//获取项目目录
-		String newid="";//获取xml中最后一个id
+		String newid="";//存储xml中最后一个id
 		try {   
 			File f = new File(baseurl+"story\\lovestory.xml");   
 			SAXReader reader = new SAXReader();Document doc = reader.read(f);   
@@ -58,7 +58,7 @@ public class addmsgServlet extends HttpServlet {
 		su.initialize(this.getServletConfig(),request,response);
 		su.setMaxFileSize(1000000);
 		su.setTotalMaxFileSize(4000000);
-		su.setAllowedFilesList("bmp,jpg,tiff,gif,pcx,tga,exif,fpx,svg,psd,cdr,pcd,dxf,ufo,eps,ai,raw,jpeg");
+		su.setAllowedFilesList("bmp,jpg,tiff,gif,pcx,tga,exif,fpx,svg,psd,cdr,pcd,dxf,ufo,eps,ai,raw,jpeg,png");
 		try {
 			su.setDeniedFilesList("exe,bat,jsp,htm,html,,");su.upload();
 			for (int i=0;i<su.getFiles().getCount();i++){com.jspsmart.upload.File file=su.getFiles().getFile(i);if(file.isMissing()) continue;file.saveAs("/images/"+memoryid+"."+file.getFileExt());} 
@@ -71,6 +71,7 @@ public class addmsgServlet extends HttpServlet {
 		
 		//新数据写入到xml中
 		try {
+			System.out.println("d:"+baseurl+"story\\lovestory.xml");
 			SAXReader reader = new SAXReader();Document doc = reader.read(new FileInputStream(new File(baseurl+"story\\lovestory.xml")));
 			Element timemachine = null;
 			try{timemachine=(Element) doc.selectSingleNode("./timemachine");}catch (Exception ex){System.out.println("异常信息:"+ex);}

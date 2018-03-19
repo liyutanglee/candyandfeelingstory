@@ -41,7 +41,7 @@ public class delmsgServlet extends HttpServlet {
 		String baseurl=request.getSession().getServletContext().getRealPath("");//获取项目目录
 		String id=request.getParameter("id");
 		
-		//新数据写入到xml中
+		//将更新的数据写入到xml中
 		try {
 			SAXReader reader = new SAXReader();Document doc = reader.read(new FileInputStream(new File(baseurl+"story\\lovestory.xml")));
 			Element timemachine = null;

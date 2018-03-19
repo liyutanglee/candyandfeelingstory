@@ -47,7 +47,7 @@ public class edmsgServlet extends HttpServlet {
 		su.initialize(this.getServletConfig(),request,response);
 		su.setMaxFileSize(1000000);
 		su.setTotalMaxFileSize(4000000);
-		su.setAllowedFilesList("bmp,jpg,tiff,gif,pcx,tga,exif,fpx,svg,psd,cdr,pcd,dxf,ufo,eps,ai,raw,jpeg");
+		su.setAllowedFilesList("bmp,jpg,tiff,gif,pcx,tga,exif,fpx,svg,psd,cdr,pcd,dxf,ufo,eps,ai,raw,jpeg,png");
 		try {
 			su.setDeniedFilesList("exe,bat,jsp,htm,html,,");
 			su.upload();
@@ -57,7 +57,7 @@ public class edmsgServlet extends HttpServlet {
 			String edorder=java.net.URLDecoder.decode(su.getRequest().getParameter("edorder"),"utf-8");
 			String eddate=java.net.URLDecoder.decode(su.getRequest().getParameter("eddate"),"utf-8");
 			String edcontent=java.net.URLDecoder.decode(su.getRequest().getParameter("edcontent"),"utf-8");
-			//System.out.println(edid);
+			boolean missfileflag=false;if(su.getFiles().getCount()==0){missfileflag=true;}
 			for (int i=0;i<su.getFiles().getCount();i++){
 				com.jspsmart.upload.File file=su.getFiles().getFile(i);
 				if(file.isMissing()){
@@ -69,7 +69,7 @@ public class edmsgServlet extends HttpServlet {
 				}
 			} 
 			
-			SAXReader reader = new SAXReader();Document doc = reader.read(new FileInputStream(new File(baseurl+"story\\lovestory.xml")));
+			SAXReader reader = new SAXReader();Document doc = reader.read(new FileInputStream(new File(baseurl+"story\\lovestory.xml")));//
 			Element timemachine = null;
 			timemachine=(Element) doc.selectSingleNode("./timemachine");
 			Element a = (Element) timemachine.selectSingleNode("(//memory)["+edid+"]");
@@ -81,7 +81,8 @@ public class edmsgServlet extends HttpServlet {
 			List datec = a.elements("date");
 			for(Iterator childs3=datec.iterator();childs3.hasNext();){Element everyone = (Element)childs3.next();everyone.setText(eddate);}
 			List imgc = a.elements("img");
-			for(Iterator childs4=imgc.iterator();childs4.hasNext();){Element everyone = (Element)childs4.next();everyone.setText(edid+"."+su.getFiles().getFile(0).getFileExt());}
+			System.out.println(missfileflag);
+			if(!missfileflag){for(Iterator childs4=imgc.iterator();childs4.hasNext();){Element everyone = (Element)childs4.next();everyone.setText(edid+"."+su.getFiles().getFile(0).getFileExt());}}
 			
 			
 			BufferedWriter fileWriter = new BufferedWriter( new OutputStreamWriter(new FileOutputStream(baseurl+"story\\lovestory.xml"),"UTF-8"));
@@ -91,34 +92,5 @@ public class edmsgServlet extends HttpServlet {
 			writer.write(doc);
 			writer.close();
 		} catch (Exception e) {e.printStackTrace();} 
-		
-
-		
-		/*
-		//新数据写入到xml中
-		try {
-			SAXReader reader = new SAXReader();Document doc = reader.read(new FileInputStream(new File(baseurl+"story\\lovestory.xml")));
-			Element timemachine = null;
-			try{timemachine=(Element) doc.selectSingleNode("./timemachine");}catch (Exception ex){System.out.println("异常信息:"+ex);}
-			
-			timemachine.addElement("memory");
-			Element a = (Element) timemachine.selectSingleNode("(//memory)[last()]");
-			a.addElement("id").addText(memoryid+"");
-			a.addElement("order").addText(addorder);
-			a.addElement("img").addText(memoryid+"."+su.getFiles().getFile(0).getFileExt());
-			a.addElement("content").addText(addcontent);
-			a.addElement("date").addText(adddate);
-			
-			BufferedWriter fileWriter = new BufferedWriter( new OutputStreamWriter(new FileOutputStream(baseurl+"story\\lovestory.xml"),"UTF-8"));
-			OutputFormat format = OutputFormat.createPrettyPrint();format.setEncoding("utf-8");
-			XMLWriter writer = new XMLWriter(System.out, format);
-			writer.setWriter(fileWriter);
-			writer.write(doc);
-			writer.close();
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		*/
 	}
 }
