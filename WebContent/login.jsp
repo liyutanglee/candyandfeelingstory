@@ -38,6 +38,12 @@
 	
 	<script src="js/jquery.min.js"></script>
 	<script>
+		$("#lovepass").keypress(function(event){
+    			if(event.which === 13) { 
+        			return login();
+     			}
+		});
+
 		function login(){
 			$.ajax({  
 	       		url:'login.do?lovepass='+$("#lovepass").val(),type:'post',  
