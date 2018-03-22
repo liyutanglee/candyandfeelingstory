@@ -149,7 +149,7 @@ body {
 	-moz-border-radius: 25px;
 	-o-border-radius: 25px;
 	margin: 0px 0px 12px 0px;
-	width: 88%;
+	width: 98%;
 	-webkit-appearance: none;
 }
 
@@ -343,7 +343,7 @@ body {
 		padding: 30px 40px;
 	}
 	.login-top input[type="password"] {
-		width: 85%;
+		width: 98%;
 	}
 	.login h2 {
 		font-size: 25px;
