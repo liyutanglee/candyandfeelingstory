@@ -1,4 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%
+	//判断是否登陆
+	if(session.getAttribute("login")==null){
+	}else{
+		String login=session.getAttribute("login").toString();
+		if(login.equals("yes")){response.sendRedirect("/candyandfeelingstory/index.jsp");}
+	}
+%>
 <!DOCTYPE HTML>
 <html>
 	<head>
