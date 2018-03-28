@@ -54,7 +54,7 @@
     <id>8</id>  
     <order>NO。捌</order>  
     <img>8.jpg</img>  
-    <content>同时去太古仓码头同埋隔离哒大阪仓,码头有种炒鸡惬意哒feel,;芝士堡意粉餐厅,点哒辣个鱼扒贼好吃哒;喝啦一哈炒鸡大杯喜茶红柚。</content>  
+    <content>同时去太古仓码头同埋隔离哒大阪仓,码头有种炒鸡惬意哒feel;芝士堡意粉餐厅,点哒辣个鱼扒贼好吃哒;喝啦一哈炒鸡大杯喜茶红柚。</content>  
     <date>2017-09-09</date> 
   </memory>  
   <memory> 
@@ -124,14 +124,14 @@
     <id>18</id>  
     <order>NO。拾捌</order>  
     <img>18.jpeg</img>  
-    <content>一起睇睇移动迷宫3,前两部都木有睇剧情居然也衔接哒上哟;钢市哒稻香酒家;惊喜送给宝宝哒香奈儿可可小姐。</content>  
+    <content>一起睇睇移动迷宫3,前两部都木有睇剧情居然也衔接哒上哟;港式哒稻香酒家;惊喜送给宝宝哒香奈儿可可小姐。</content>  
     <date>2018-01-27</date> 
   </memory>  
   <memory> 
     <id>19</id>  
     <order>NO。拾玖</order>  
     <img>19.jpg</img>  
-    <content>庆祝一哈宝宝哒birthday♡muamuamua♡,试试提拉米苏,开始还以为素比较大哒蛋糕来哒;Ma belle甜品店;瘫到宜家家居木舍得走啦啦;博多一幸舍吃吃日本饭,店里哒bgm同店员哒欢迎语赶脚超级666。</content>  
+    <content>庆祝一哈宝宝哒birthday♡muamuamua♡,试试提拉米苏,开始还以为素比较大哒蛋糕来哒;Ma Belle甜品店;瘫到宜家家居木舍得走啦啦;博多一幸舍吃吃日本饭,店里哒bgm同店员哒欢迎语赶脚超级666。</content>  
     <date>2018-02-09</date> 
   </memory>  
   <memory> 
@@ -175,5 +175,12 @@
     <img>25.jpg</img>  
     <content>♡♡搭车去宝宝屋企吃吃吃啦啦哇哈哈，饱炸我啦啦♡♡</content>  
     <date>2018-03-16</date> 
+  </memory>  
+  <memory> 
+    <id>26</id>  
+    <order>NO。贰陆</order>  
+    <img>26.jpg</img>  
+    <content>同亲爱哒宝宝一起去华农睇睇琳琅满目哒紫荆花;当然也不能少了喝华农酸奶啦啦;吃吃比较隐秘哒一绝牛杂;在Line Friends瘫几瘫歇会;江南味道再chi吃chi。</content>  
+    <date>2018-03-24</date> 
   </memory> 
 </timemachine>
